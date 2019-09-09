@@ -20,7 +20,7 @@ public class Response {
         FileInputStream fis = null;
         try {
             File file = new File(HttpServer.WEB_ROOT, request.getUri());
-            if (file.exists()) {
+            if (file.isFile() && file.exists()) {
                 fis = new FileInputStream(file);
                 int len = -1;//表示已经读取了多少个字节，如果是 -1，表示已经读取到文件的末尾
                 String content = "HTTP/1.1 200 ok\r\n" +
