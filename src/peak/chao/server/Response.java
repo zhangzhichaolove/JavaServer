@@ -33,6 +33,7 @@ public class Response {
                     System.out.println(new String(bytes, 0, len));
                     output.write(bytes, 0, len);
                 }
+                output.close();
             } else {
                 String content = "<!DOCTYPE html>\n" +
                         "<html lang=\"en\">\n" +
